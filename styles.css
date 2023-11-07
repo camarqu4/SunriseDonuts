@@ -4,15 +4,25 @@ body {
     padding: 0;
 }
 
-header, footer {
+header {
     background-color: #f9d1b7;
     padding: 10px 0;
+    text-align: center;
+}
+
+header img {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* This will keep the aspect ratio intact */
+    display: block;
+    margin: auto;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
@@ -24,8 +34,53 @@ nav a {
     color: #6d4c41;
 }
 
-footer {
+section {
+    padding: 20px;
     text-align: center;
+}
+
+footer {
+    background-color: #6d4c41;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.social-media li {
+    padding: 0 10px;
+}
+
+.social-media a {
+    display: inline-block;
+    width: 40px; /* Size of social media icons */
+    height: 40px; /* Size of social media icons */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.social-media .instagram {
+    background-image: url('path-to-your-instagram-icon.png');
+}
+
+.social-media .facebook {
+    background-image: url('path-to-your-facebook-icon.png');
+}
+
+.social-media .yelp {
+    background-image: url('path-to-your-yelp-icon.png');
+}
+
+.social-media .tiktok {
+    background-image: url('path-to-your-tiktok-icon.png');
 }
 
 /* Add more styles for layout, fonts, colors, etc. */
