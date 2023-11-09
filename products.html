@@ -161,8 +161,34 @@
                 </div>
             </section>
             <h2>Drinks</h2>
-            <!-- List drinks with images and prices -->
-        </section>
+<!-- Product 1 -->
+<section class="product" style="display: flex; align-items: center; margin-bottom: 20px;">
+    <img src="drinks_hot_coffee.png" alt="Fresh Brewed Coffee" style="width: 100px; height: auto; margin-right: 20px;">
+    <div>
+        <h3 style="font-weight: bold;">Fresh Brewed Coffee</h3>
+        <p>Rich and aromatic, freshly brewed coffee.</p>
+        <span class="price" style="font-weight: bold;">$1.50</span>
+        <div class="quantity" style="margin-top: 10px;">
+            <label for="quantity-coffee">Quantity:</label>
+            <input type="number" id="quantity-coffee" name="quantity" min="1" max="10" value="1">
+        </div>
+        <button type="button" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+</section>
+<!-- Product 2 -->
+<section class="product" style="display: flex; align-items: center; margin-bottom: 20px;">
+    <img src="drinks_cold_brew.png" alt="Iced Cold Brew" style="width: 100px; height: auto; margin-right: 20px;">
+    <div>
+        <h3 style="font-weight: bold;">Iced Cold Brew</h3>
+        <p>Cool and refreshing iced cold brew with a caramel twist.</p>
+        <span class="price" style="font-weight: bold;">$2.00</span>
+        <div class="quantity" style="margin-top: 10px;">
+            <label for="quantity-iced-tea">Quantity:</label>
+            <input type="number" id="quantity-iced-tea" name="quantity" min="1" max="10" value="1">
+        </div>
+        <button type="button" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+</section>
         <aside style="flex: 1;">
             <h3>Your Order</h3>
             <!-- Cart and checkout details -->
