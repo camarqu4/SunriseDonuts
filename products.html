@@ -21,6 +21,16 @@
         <section style="flex: 3;">
             <h2>Donuts</h2>
             <!-- List donuts with images and prices -->
+            <section class="product">
+    <img src="path-to-product-image.jpg" alt="Product Name" style="width: 100%; height: auto;">
+    <h3 style="font-weight: bold;">Product Name</h3>
+    <p>Description of the product goes here.</p>
+    <div class="quantity" style="margin-bottom: 10px;">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+    </div>
+    <button type="button" onclick="addToCart(this)">Add to Cart</button>
+</section>
             <h2>Drinks</h2>
             <!-- List drinks with images and prices -->
         </section>
