@@ -191,27 +191,65 @@
 </section>
         <aside style="flex: 1;">
             <h3>Your Order</h3>
-            <!-- Cart and checkout details -->
+            <div id="cart">
+                <ul id="cart-items">
+                    <!-- Cart items will be added here dynamically -->
+                </ul>
+                <p>Total: <span id="cart-total">$0.00</span></p>
+                <button type="button" onclick="checkout()">Checkout</button>
+            </div>
         </aside>
     </main>
     <footer>
         <!-- Social media links same as index.html -->
     </footer>
     <script>
-        // Assuming you have a function to format the price as currency
-        function formatPrice(price) {
-            return '$' + Number(price).toFixed(2);
-        }
+        var cart = {};
 
         function addToCart(button) {
             var product = button.closest('.product');
             var productName = product.querySelector('h3').innerText;
-            var productPrice = product.querySelector('.price').innerText.replace('$', ''); // Remove the dollar sign
-            var quantity = product.querySelector('input[type=number]').value;
-            var totalPrice = formatPrice(productPrice * quantity);
+            var productPrice = parseFloat(product.querySelector('.price').innerText.replace('$', ''));
+            var quantity = parseInt(product.querySelector('input[type=number]').value);
 
-            alert('Added ' + quantity + ' of ' + productName + ' to cart at ' + totalPrice);
-            // Here you would add the logic to actually update the cart
+            // If the product is already in the cart, update the quantity
+            if (cart[productName]) {
+                cart[productName].quantity += quantity;
+            } else {
+                // If the product is not in the cart, add it
+                cart[productName] = {
+                    price: productPrice,
+                    quantity: quantity
+                };
+            }
+
+            updateCart();
+        }
+
+        function updateCart() {
+            var cartItemsContainer = document.getElementById('cart-items');
+            var cartTotalContainer = document.getElementById('cart-total');
+            var total = 0;
+            cartItemsContainer.innerHTML = ''; // Clear the cart items container
+
+            // Add each cart item to the cart items container
+            for (var itemName in cart) {
+                var item = cart[itemName];
+                var itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                var listItem = document.createElement('li');
+                listItem.innerText = itemName + ' x ' + item.quantity + ' ($' + itemTotal.toFixed(2) + ')';
+                cartItemsContainer.appendChild(listItem);
+            }
+
+            // Update the total
+            cartTotalContainer.innerText = '$' + total.toFixed(2);
+        }
+
+        function checkout() {
+            // Implement checkout functionality here
+            alert('Checkout not implemented yet.');
         }
     </script>
 </body>
