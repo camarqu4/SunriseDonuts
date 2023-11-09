@@ -8,40 +8,47 @@
 </head>
 <body>
     <header>
-    <img src="Logo.png" alt="Sunrise Donuts Logo" style="width: 150px; height: auto; display: block; margin: auto;">
-    <nav>
-        <ul style="list-style: none; display: flex; justify-content: center;">
-            <li style="padding: 0 10px;"><a href="index.html">Home</a></li>
-            <li style="padding: 0 10px;"><a href="products.html">Products</a></li>
-            <li style="padding: 0 10px;"><a href="about.html">About Us</a></li>
-        </ul>
-    </nav>
-</header>
+        <img src="Logo.png" alt="Sunrise Donuts Logo" style="width: 150px; height: auto; display: block; margin: auto;">
+        <nav>
+            <ul style="list-style: none; display: flex; justify-content: center;">
+                <li style="padding: 0 10px;"><a href="index.html">Home</a></li>
+                <li style="padding: 0 10px;"><a href="products.html">Products</a></li>
+                <li style="padding: 0 10px;"><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
     <main style="display: flex;">
         <section style="flex: 3;">
             <h2>Donuts</h2>
-            <!-- List donuts with images and prices -->
-            <section class="product">
-    <img src="donut_glazed.png" alt="Glazed Classic" style="width: 30%; height: auto;">
-    <h3 style="font-weight: bold;">Glazed Classic</h3>
-    <p>Sweet vanilla glazed traditional donut.</p>
-    <div class="quantity" style="margin-bottom: 10px;">
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
-    </div>
-    <button type="button" onclick="addToCart(this)">Add to Cart</button>
-</section>
-            
-         <section class="product">
-    <img src="donut_glazed_chocolate.png" alt=" Chocolate Glazed Classic" style="width: 30%; height: auto;">
-    <h3 style="font-weight: bold;">Glazed Classic</h3>
-    <p>Sweet chocolate glazed traditional donut.</p>
-    <div class="quantity" style="margin-bottom: 10px;">
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
-    </div>
-    <button type="button" onclick="addToCart(this)">Add to Cart</button>
-</section>
+            <!-- Product 1 -->
+            <section class="product" style="display: flex; align-items: center; margin-bottom: 20px;">
+                <img src="donut_glazed.png" alt="Glazed Classic" style="width: 100px; height: auto; margin-right: 20px;">
+                <div>
+                    <h3 style="font-weight: bold;">Glazed Classic</h3>
+                    <p>Sweet vanilla glazed traditional donut.</p>
+                    <span class="price" style="font-weight: bold;">$1.99</span>
+                    <div class="quantity" style="margin-top: 10px;">
+                        <label for="quantity-1">Quantity:</label>
+                        <input type="number" id="quantity-1" name="quantity" min="1" max="10" value="1">
+                    </div>
+                    <button type="button" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </section>
+            <!-- Product 2 -->
+            <section class="product" style="display: flex; align-items: center; margin-bottom: 20px;">
+                <img src="donut_glazed_chocolate.png" alt="Chocolate Glazed Classic" style="width: 100px; height: auto; margin-right: 20px;">
+                <div>
+                    <h3 style="font-weight: bold;">Chocolate Glazed Classic</h3>
+                    <p>Sweet chocolate glazed traditional donut.</p>
+                    <span class="price" style="font-weight: bold;">$2.49</span>
+                    <div class="quantity" style="margin-top: 10px;">
+                        <label for="quantity-2">Quantity:</label>
+                        <input type="number" id="quantity-2" name="quantity" min="1" max="10" value="1">
+                    </div>
+                    <button type="button" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </section>
+            <!-- Add more products as needed -->
             <h2>Drinks</h2>
             <!-- List drinks with images and prices -->
         </section>
@@ -53,14 +60,22 @@
     <footer>
         <!-- Social media links same as index.html -->
     </footer>
-<script>
-function addToCart(button) {
-    var product = button.closest('.product');
-    var productName = product.querySelector('h3').innerText;
-    var quantity = product.querySelector('input[type=number]').value;
-    alert('Added ' + quantity + ' of ' + productName + ' to cart!');
-    // Here you would add the logic to actually update the cart
-}
-</script>
+    <script>
+        // Assuming you have a function to format the price as currency
+        function formatPrice(price) {
+            return '$' + Number(price).toFixed(2);
+        }
+
+        function addToCart(button) {
+            var product = button.closest('.product');
+            var productName = product.querySelector('h3').innerText;
+            var productPrice = product.querySelector('.price').innerText.replace('$', ''); // Remove the dollar sign
+            var quantity = product.querySelector('input[type=number]').value;
+            var totalPrice = formatPrice(productPrice * quantity);
+
+            alert('Added ' + quantity + ' of ' + productName + ' to cart at ' + totalPrice);
+            // Here you would add the logic to actually update the cart
+        }
+    </script>
 </body>
 </html>
