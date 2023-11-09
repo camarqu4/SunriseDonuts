@@ -42,5 +42,14 @@
     <footer>
         <!-- Social media links same as index.html -->
     </footer>
+<script>
+function addToCart(button) {
+    var product = button.closest('.product');
+    var productName = product.querySelector('h3').innerText;
+    var quantity = product.querySelector('input[type=number]').value;
+    alert('Added ' + quantity + ' of ' + productName + ' to cart!');
+    // Here you would add the logic to actually update the cart
+}
+</script>
 </body>
 </html>
