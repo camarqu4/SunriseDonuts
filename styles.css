@@ -34,9 +34,24 @@ nav a {
     color: #6d4c41;
 }
 
-section {
+.main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.products {
+    flex: 3; /* Allows this section to grow and take up space */
+}
+
+.cart {
+    flex: 1; /* This will be narrower than the products list */
+    margin-left: 20px; /* Adds some space between the products and the cart */
+}
+
+/* Adjusted padding for specific sections */
+.products > section,
+.cart > aside {
     padding: 20px;
-    text-align: center;
 }
 
 footer {
