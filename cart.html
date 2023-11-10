@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Sunrise Donuts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!-- Your header content -->
+    </header>
+    <main>
+        <h2>Your Cart</h2>
+        <div id="cart">
+            <ul id="cart-items">
+                <!-- Cart items will be added here dynamically -->
+            </ul>
+            <p>Total: <span id="cart-total">$0.00</span></p>
+            <button type="button" onclick="checkout()">Checkout</button>
+        </div>
+    </main>
+    <footer>
+        <!-- Your footer content -->
+    </footer>
+    <script>
+        var cart = {};
+
+        function updateCart() {
+            var cartItemsContainer = document.getElementById('cart-items');
+            var cartTotalContainer = document.getElementById('cart-total');
+            var total = 0;
+            cartItemsContainer.innerHTML = ''; // Clear the cart items container
+
+            // Load cart from localStorage
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'));
+            }
+
+            // Add each cart item to the cart items container
+            for (var itemName in cart) {
+                var item = cart[itemName];
+                var itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                var listItem = document.createElement('li');
+                listItem.innerText = itemName + ' x ' + item.quantity + ' ($' + itemTotal.toFixed(2) + ')';
+                cartItemsContainer.appendChild(listItem);
+            }
+
+            // Update the total
+            cartTotalContainer.innerText = '$' + total.toFixed(2);
+        }
+
+        function checkout() {
+            // Implement checkout functionality here
+            alert('Checkout not implemented yet.');
+        }
+
+        // Update the cart when the page loads
+        updateCart();
+    </script>
+</body>
+</html>
