@@ -199,4 +199,12 @@ footer {
     color: gold;
     font-size: 20px; /* Adjust the size of the stars */
 }
+
+/* Style for the staff image in the About Us page */
+.about-staff-image {
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* This will keep the aspect ratio intact */
+    margin-bottom: 20px; /* Adds some space below the image */
+}
+
 /* Add more styles for layout, fonts, colors, etc. */
