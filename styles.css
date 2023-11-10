@@ -207,4 +207,44 @@ footer {
     margin-bottom: 20px; /* Adds some space below the image */
 }
 
+/* Style the table with a light blue border */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #add8e6;
+  /* Light blue border */
+}
+
+th,
+td {
+  border: 1px solid #add8e6;
+  /* Light blue lines for cells */
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4b860;
+  /* Keep the existing header background */
+}
+
+/* Style the order form */
+.customer-details input,
+.customer-details button {
+  display: block;
+  /* Stack them vertically */
+  width: calc(100% - 20px);
+  /* Full width minus padding */
+  padding: 10px;
+  margin-bottom: 10px;
+  /* Space out the fields */
+}
+
+button {
+  background-color: #f4b860;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 /* Add more styles for layout, fonts, colors, etc. */
