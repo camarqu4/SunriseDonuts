@@ -190,7 +190,8 @@
         <button type="button" onclick="addToCart(this)">Add to Cart</button>
     </div>
 </section>
-        <aside class="cart">
+        <aside style="flex: 1;">
+            <button type="button" onclick="window.location.href='cart.html'">View Cart</button>
             <h3>Your Order</h3>
             <div id="cart">
                 <ul id="cart-items">
@@ -202,6 +203,8 @@
         </aside>
     </main>
     <footer>
+        <!-- Social media links same as index.html -->
+    </footer>
     <script>
         var cart = {};
 
@@ -222,6 +225,9 @@
                 };
             }
 
+            // Save the cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
             updateCart();
         }
 
@@ -230,6 +236,11 @@
             var cartTotalContainer = document.getElementById('cart-total');
             var total = 0;
             cartItemsContainer.innerHTML = ''; // Clear the cart items container
+
+            // Load cart from localStorage
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'));
+            }
 
             // Add each cart item to the cart items container
             for (var itemName in cart) {
@@ -250,6 +261,18 @@
             // Implement checkout functionality here
             alert('Checkout not implemented yet.');
         }
+
+        // Call this function when the products page loads to update the cart display
+        function loadCart() {
+            // Check if there's cart data in localStorage
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'));
+                updateCart();
+            }
+        }
+
+        // Make sure to call loadCart when the page loads
+        window.onload = loadCart;
     </script>
 </body>
 </html>
