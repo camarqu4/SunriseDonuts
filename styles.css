@@ -119,6 +119,13 @@ footer {
 /* Hide the images by default */
 .mySlides {
   display: none;
+  text-align: center; /* Center the image within the slide */
+}
+
+/* Style the images inside the slides */
+.mySlides img {
+  max-width: 50%; /* Set the maximum width to 50% of the container */
+  height: auto; /* Maintain the aspect ratio */
 }
 
 /* Next & previous buttons */
