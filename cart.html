@@ -19,14 +19,12 @@
         </nav>
     </header>
     <main>
-        <h2>Your Cart</h2>
-        <div id="cart">
-            <ul id="cart-items">
-                <!-- Cart items will be added here dynamically -->
-            </ul>
-            <p>Total: <span id="cart-total">$0.00</span></p>
-            <button type="button" onclick="checkout()">Checkout</button>
+        <h1>Your Shopping Cart</h1>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
         </div>
+        <p>Total: <span id="cart-total">$0.00</span></p>
+        <button type="button" onclick="window.location.href='products.html'">Continue Shopping</button>
     </main>
     <footer>
         <!-- Your footer content -->
@@ -34,39 +32,56 @@
     <script>
         var cart = {};
 
-        function updateCart() {
+        function loadCart() {
+            if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'));
+                displayCart();
+            }
+        }
+
+        function displayCart() {
             var cartItemsContainer = document.getElementById('cart-items');
             var cartTotalContainer = document.getElementById('cart-total');
             var total = 0;
             cartItemsContainer.innerHTML = ''; // Clear the cart items container
 
-            // Load cart from localStorage
-            if (localStorage.getItem('cart')) {
-                cart = JSON.parse(localStorage.getItem('cart'));
-            }
-
-            // Add each cart item to the cart items container
             for (var itemName in cart) {
                 var item = cart[itemName];
                 var itemTotal = item.price * item.quantity;
                 total += itemTotal;
 
-                var listItem = document.createElement('li');
-                listItem.innerText = itemName + ' x ' + item.quantity + ' ($' + itemTotal.toFixed(2) + ')';
-                cartItemsContainer.appendChild(listItem);
+                var itemRow = document.createElement('div');
+                itemRow.className = 'cart-item';
+                itemRow.innerHTML = `
+                    <span>${itemName}</span>
+                    <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${itemName}', this.value)">
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                    <button onclick="removeItem('${itemName}')">Remove</button>
+                `;
+                cartItemsContainer.appendChild(itemRow);
             }
 
-            // Update the total
-            cartTotalContainer.innerText = '$' + total.toFixed(2);
+            cartTotalContainer.innerText = `$${total.toFixed(2)}`;
         }
 
-        function checkout() {
-            // Implement checkout functionality here
-            alert('Checkout not implemented yet.');
+        function updateQuantity(itemName, quantity) {
+            quantity = parseInt(quantity);
+            if (quantity > 0) {
+                cart[itemName].quantity = quantity;
+            } else {
+                delete cart[itemName];
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
         }
 
-        // Update the cart when the page loads
-        updateCart();
+        function removeItem(itemName) {
+            delete cart[itemName];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        window.onload = loadCart;
     </script>
 </body>
 </html>
