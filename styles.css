@@ -166,4 +166,37 @@ footer {
   text-align: center;
 }
 
+.customer-reviews {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.review {
+    width: 30%; /* Adjust the width as needed */
+    text-align: center;
+}
+
+.review-text {
+    font-style: italic;
+    quotes: "“" "”" "‘" "’";
+}
+
+.review-text:before {
+    content: open-quote;
+}
+
+.review-text:after {
+    content: close-quote;
+}
+
+.review-author {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.stars {
+    color: gold;
+    font-size: 20px; /* Adjust the size of the stars */
+}
 /* Add more styles for layout, fonts, colors, etc. */
