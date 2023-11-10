@@ -40,13 +40,24 @@ nav a {
 }
 
 .products {
-    flex: 3; /* Allows this section to grow and take up space */
+    flex-grow: 2; /* Adjust as needed, this will allow the products section to take up more space */
 }
 
 .cart {
-    flex: 1; /* This will be narrower than the products list */
-    margin-left: 20px; /* Adds some space between the products and the cart */
+    flex-grow: 1; /* Adjust as needed, this will allow the cart section to take up less space */
+    /* If you want a fixed width for the cart, you can use width: 300px; for example, and remove flex-grow */
+    padding-left: 20px; /* This adds some space between the products and the cart */
 }
+
+/* Ensure that the following rules are set to 0 or are removed if you want the sections to be directly next to each other without any space */
+section.products {
+    padding-right: 0;
+}
+
+aside.cart {
+    padding-left: 0;
+}
+
 
 /* Adjusted padding for specific sections */
 .products > section,
