@@ -203,7 +203,7 @@ footer {
 
 /* Style for the staff image in the About Us page */
 .about-staff-image {
-    width: 75%; /* Adjust the width as needed */
+    width: 30%; /* Adjust the width as needed */
     height: auto; /* This will keep the aspect ratio intact */
     margin-bottom: 20px; /* Adds some space below the image */
 }
