@@ -255,4 +255,14 @@ button {
   cursor: pointer;
 }
 
+video-container {
+    max-width: 800px; /* Adjust this value as needed */
+    margin: 0 auto; /* Centers the video container */
+    overflow: hidden; /* Ensures no overflow if video is larger than container */
+}
+
+.video-container video {
+    width: 100%; /* Makes the video responsive */
+    height: auto; /* Maintain aspect ratio */
+}
 /* Add more styles for layout, fonts, colors, etc. */
