@@ -208,6 +208,13 @@ footer {
     margin-bottom: 20px; /* Adds some space below the image */
 }
 
+/* Style for the history image in the About Us page */
+.about-history-image {
+    width: 30%; /* Adjust the width as needed */
+    height: auto; /* This will keep the aspect ratio intact */
+    margin-bottom: 20px; /* Adds some space below the image */
+}
+
 /* Style the table with a light blue border */
 table {
   width: 100%;
