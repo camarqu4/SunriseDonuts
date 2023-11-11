@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products | Sunrise Donuts</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .products-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .product-section {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .checkout-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #f8c146;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,9 +40,11 @@
             </ul>
         </nav>
     </header>
-    <main style="display: flex;">
-        <section style="flex: 3;">
-            <h2>Donuts</h2>
+    <main>
+        <div class="products-container">
+            <!-- Donuts Section -->
+            <section class="product-section">
+                <h2>Donuts</h2>
             <!-- Product 1 -->
             <section class="product" style="display: flex; align-items: center; margin-bottom: 20px;">
                 <img src="donut_glazed.png" alt="Glazed Classic" style="width: 100px; height: auto; margin-right: 20px;">
@@ -161,8 +185,10 @@
                     <button type="button" onclick="addToCart(this)">Add to Cart</button>
                 </div>
             </section>
-</section>
-<h2>Drinks</h2>
+    </section>
+<!-- Drinks Section -->
+            <section class="product-section">
+                <h2>Drinks</h2>
 <!-- Product 1 -->
 <section class="product" style="display: flex; align-items: center; margin-bottom: 20px;">
     <img src="drinks_hot_coffee.png" alt="Fresh Brewed Coffee" style="width: 100px; height: auto; margin-right: 20px;">
@@ -191,10 +217,10 @@
         <button type="button" onclick="addToCart(this)">Add to Cart</button>
     </div>
 </section>
-            </section>
-        </section>
-   </main>
-    <button type="button" onclick="window.location.href='orders.html'">Checkout</button>
+            <</section>
+        </div>
+        <button class="checkout-button" type="button" onclick="window.location.href='orders.html'">Checkout</button>
+    </main>
     <footer style="text-align: center; margin-top: 20px;">
         <p>&copy; 2023 Sunrise Donuts. All rights reserved.</p>
     </footer>
