@@ -23,39 +23,104 @@ awesome/4.7.0/css/font-awesome.min.css">
 
  <main>
     <h2>Orders and Catering</h2>
-
-    <!-- Customer Details Section -->
-    <div class="customer-details">
-      <h3>Customer Information:</h3>
-      <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-      <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-      <input type="email" id="email" name="email" placeholder="Email Address" required>
-      <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-      <h3>Catering or Pickup Date and Time:</h3>
-      <input type="datetime-local" id="pickupTime" name="pickupTime" required>
-    </div>
-
-    <!-- Products Table Section -->
-    <h3>Your Order Summary</h3>
-    <table id="orderSummary">
-      <thead>
+    <form id="orderForm">
+      <table id="orderTable">
         <tr>
           <th>Product</th>
-          <th>Description</th>
-          <th>Price</th>
           <th>Quantity</th>
-          <th>Total</th>
+          <th>Price</th>
         </tr>
-      </thead>
-      <tbody>
-        <!-- Product rows will be inserted here by JavaScript -->
-      </tbody>
-    </table>
+        <tr>
+          <td>Glazed Classic</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="1.99"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Chocolate Glazed Classic</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="2.49"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Sugar Classic</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="1.99"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Strawberry Sprinkle Glazed Classic</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="1.99"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Powdered Cream Filled Classic</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="1.99"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Powdered Jelly Filled Classic</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="1.99"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Old Fashioned</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="1.99"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Maple Longjohn</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="1.99"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Chocolate Longjohn</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="1.99"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Cinnamon Roll</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="1.99"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Fresh Brewed Coffee</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="1.5"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Iced Cold Brew</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="2"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Boba Tea</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="3"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Milk</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="2"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+        <tr>
+          <td>Thai Tea</td>
+          <td><input type="number" min="0" value="0" class="quantity-input" data-price="2"></td>
+          <td class="product-price">$0.00</td>
+        </tr>
+      </table>
 
-   <div style="text-align: center;">
-    <button type="submit">Submit Order</button>
-    <button type="button" onclick="window.location.href='products.html'">Continue Shopping</button>
-</div>
+      <div class="customer-details">
+        <br><br>
+        <h3>Customer Information:</h3>
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+        <br><br>
+        <h3>Catering or Pickup Date and Time:</h3>
+        <input type="datetime-local" id="pickupTime" name="pickupTime" required>
+      </div>
+      <button type="submit">Submit Order</button>
+    </form>
+  </main>
 
   <footer style="text-align: center; margin-top: 20px;">
       <p>&copy; 2023 Sunrise Donuts. All rights reserved.</p>
@@ -68,6 +133,6 @@ awesome/4.7.0/css/font-awesome.min.css">
       </div>
   </footer>
 
- <script src="loadCart.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
