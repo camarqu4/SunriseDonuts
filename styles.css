@@ -248,8 +248,7 @@ button {
 }
 
 .map-container {
-    justify-content: center;
-    height: 100vh;
+    text-align: center;
 }
 
 .socialMediaLinks a {
