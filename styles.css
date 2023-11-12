@@ -259,7 +259,7 @@ button {
     display: flex;
     justify-content: center; /* Centers the video horizontally */
     align-items: center; /* Centers the video vertically if needed */
-    max-width: 50%; /* Set the maximum width to 50% of the original size */
+    max-width: 25%; /* Set the maximum width to 50% of the original size */
     margin: auto; /* Additional centering for the container */
 }
 
