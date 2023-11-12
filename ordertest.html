@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ... existing head content ... -->
+</head>
+<body>
+  <header>
+    <!-- ... existing header content ... -->
+  </header>
+
+  <main>
+    <h2>Orders and Catering</h2>
+
+    <!-- Customer Details Section -->
+    <div class="customer-details">
+      <h3>Customer Information:</h3>
+      <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+      <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+      <input type="email" id="email" name="email" placeholder="Email Address" required>
+      <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+      <h3>Catering or Pickup Date and Time:</h3>
+      <input type="datetime-local" id="pickupTime" name="pickupTime" required>
+    </div>
+
+    <!-- Products Table Section -->
+    <h3>Your Order Summary</h3>
+    <table id="orderSummary">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Product rows will be inserted here by JavaScript -->
+      </tbody>
+    </table>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Order</button>
+  </main>
+
+  <footer>
+    <!-- ... existing footer content ... -->
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
