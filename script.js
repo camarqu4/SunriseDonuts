@@ -1,3 +1,19 @@
+// Function to add a product to the cart
+function addToCart(productName, price, quantityId) {
+  var quantityInput = document.getElementById(quantityId);
+  var quantity = quantityInput.valueAsNumber;
+
+  var cart = JSON.parse(localStorage.getItem('cart') || '{}');
+
+  if (cart[productName]) {
+    cart[productName].quantity += quantity;
+  } else {
+    cart[productName] = { price: price, quantity: quantity };
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
 // Function to update the price based on the input quantity and unit price
 function updatePrice(input) {
   var quantity = input.valueAsNumber; // Get the numeric value of the input
@@ -18,6 +34,7 @@ function validateForm() {
   var phone = document.getElementById('phone').value;
   var pickupTime = document.getElementById('pickupTime').value;
   // Add validation logic here if needed
+  // Return true if form is valid, or false otherwise
 }
 
 // Function to load cart from localStorage and populate the order table
@@ -27,7 +44,7 @@ function loadCartAndPopulateOrderTable() {
 
   Object.keys(cart).forEach(function(productName) {
     var product = cart[productName];
-    var row = orderTable.insertRow();
+    var row = orderTable.insertRow(-1); // Insert at the end of the table
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
