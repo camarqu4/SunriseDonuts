@@ -12,8 +12,8 @@ header {
 }
 
 header img {
-    width: 150px; /* Adjust the width as needed */
-    height: auto; /* This will keep the aspect ratio intact */
+    width: 150px; 
+    height: auto; 
     display: block;
     margin: auto;
 }
@@ -41,16 +41,14 @@ nav a {
 }
 
 .products {
-    flex-grow: 2; /* Adjust as needed, this will allow the products section to take up more space */
+    flex-grow: 2; 
 }
 
 .cart {
-    flex-grow: 1; /* Adjust as needed, this will allow the cart section to take up less space */
-    /* If you want a fixed width for the cart, you can use width: 300px; for example, and remove flex-grow */
-    padding-left: 20px; /* This adds some space between the products and the cart */
+    flex-grow: 1; 
+    padding-left: 20px;
 }
 
-/* Ensure that the following rules are set to 0 or are removed if you want the sections to be directly next to each other without any space */
 section.products {
     padding-right: 0;
 }
@@ -59,8 +57,6 @@ aside.cart {
     padding-left: 0;
 }
 
-
-/* Adjusted padding for specific sections */
 .products > section,
 .cart > aside {
     padding: 20px;
@@ -88,8 +84,8 @@ footer {
 
 .social-media a {
     display: inline-block;
-    width: 40px; /* Size of social media icons */
-    height: 40px; /* Size of social media icons */
+    width: 40px; 
+    height: 40px; 
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -110,26 +106,22 @@ footer {
     background-image: url('path-to-your-tiktok-icon.png');
 }
 
-/* Slideshow container */
 .slideshow-container {
-  max-width: 1000px; /* Adjust as needed */
+  max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-/* Hide the images by default */
 .mySlides {
   display: none;
-  text-align: center; /* Center the image within the slide */
+  text-align: center;
 }
 
-/* Style the images inside the slides */
 .mySlides img {
-  max-width: 50%; /* Set the maximum width to 50% of the container */
-  height: auto; /* Maintain the aspect ratio */
+  max-width: 50%; 
+  height: auto;
 }
 
-/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -145,18 +137,15 @@ footer {
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -174,7 +163,7 @@ footer {
 }
 
 .review {
-    width: 30%; /* Adjust the width as needed */
+    width: 30%; 
     text-align: center;
 }
 
@@ -198,54 +187,44 @@ footer {
 
 .stars {
     color: gold;
-    font-size: 20px; /* Adjust the size of the stars */
+    font-size: 20px; 
 }
 
-/* Style for the staff image in the About Us page */
 .about-staff-image {
-    width: 30%; /* Adjust the width as needed */
-    height: auto; /* This will keep the aspect ratio intact */
-    margin-bottom: 20px; /* Adds some space below the image */
+    width: 30%; 
+    height: auto; 
+    margin-bottom: 20px; 
 }
 
-/* Style for the history image in the About Us page */
 .about-history-image {
-    width: 30%; /* Adjust the width as needed */
-    height: auto; /* This will keep the aspect ratio intact */
-    margin-bottom: 20px; /* Adds some space below the image */
+    width: 30%; 
+    height: auto; 
+    margin-bottom: 20px; 
 }
 
-/* Style the table with a light blue border */
 table {
   width: 100%;
   border-collapse: collapse;
   border: 2px solid #add8e6;
-  /* Light blue border */
 }
 
 th,
 td {
   border: 1px solid #add8e6;
-  /* Light blue lines for cells */
   padding: 8px;
   text-align: left;
 }
 
 th {
   background-color: #f4b860;
-  /* Keep the existing header background */
 }
 
-/* Style the order form */
 .customer-details input,
 .customer-details button {
   display: block;
-  /* Stack them vertically */
   width: calc(100% - 20px);
-  /* Full width minus padding */
   padding: 10px;
   margin-bottom: 10px;
-  /* Space out the fields */
 }
 
 button {
@@ -257,15 +236,15 @@ button {
 
 .video-container {
     display: flex;
-    justify-content: center; /* Centers the video horizontally */
-    align-items: center; /* Centers the video vertically if needed */
-    max-width: 25%; /* Set the maximum width to 50% of the original size */
-    margin: auto; /* Additional centering for the container */
+    justify-content: center;
+    align-items: center;
+    max-width: 25%;
+    margin: auto;
 }
 
 .video-container video {
-    width: 100%; /* Makes the video fill the container */
-    height: auto; /* Keeps the aspect ratio of the video */
+    width: 100%;
+    height: auto;
 }
 
 .socialMediaLinks a {
