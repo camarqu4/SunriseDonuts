@@ -255,16 +255,17 @@ button {
   cursor: pointer;
 }
 
-video-container {
-    justify-content: center;
-    max-width: 500px; /* Adjust this value as needed */
-    margin: 0 auto; /* Centers the video container */
-    overflow: hidden; /* Ensures no overflow if video is larger than container */
+.video-container {
+    display: flex;
+    justify-content: center; /* Centers the video horizontally */
+    align-items: center; /* Centers the video vertically if needed */
+    max-width: 50%; /* Set the maximum width to 50% of the original size */
+    margin: auto; /* Additional centering for the container */
 }
 
 .video-container video {
-    width: 50%; /* Makes the video responsive */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Makes the video fill the container */
+    height: auto; /* Keeps the aspect ratio of the video */
 }
 
 .socialMediaLinks a {
