@@ -265,4 +265,14 @@ video-container {
     width: 50%; /* Makes the video responsive */
     height: auto; /* Maintain aspect ratio */
 }
-/* Add more styles for layout, fonts, colors, etc. */
+
+.socialMediaLinks a {
+  font-size: 20px;
+  margin: 0 10px 0 0;
+  text-decoration: none;
+  background-color: white;
+  padding: 10px;
+  width: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
