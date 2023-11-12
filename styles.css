@@ -247,7 +247,8 @@ button {
     height: 80%;
 }
 
-.map-container {
+iframe {
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
