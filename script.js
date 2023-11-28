@@ -28,7 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-
+  function updateTotalCost() {
+        var total = 0;
+        quantityInputs.forEach(function(input) {
+            var price = parseFloat(input.getAttribute('data-price'));
+            var quantity = parseInt(input.value);
+            total += price * quantity;
+        });
+        document.getElementById('totalCost').textContent = '$' + total.toFixed(2);
+    }
+  
   var orderForm = document.getElementById('orderForm');
   orderForm.addEventListener('submit', function(event) {
     if (!validateForm()) {
