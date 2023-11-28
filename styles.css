@@ -19,6 +19,10 @@ header img {
     margin-bottom: 10px
 }
 
+nav {
+    padding-top: 20px; /* Adjust the value as needed */
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -34,10 +38,19 @@ nav li {
 nav a {
     text-decoration: none;
     color: #6d4c41;
+    transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
-nav {
-    padding-top: 20px; /* Adjust the value as needed */
+nav a:hover {
+    color: #f4b860; /* Example: Change color on hover */
+}
+
+nav a:focus {
+    color: #f9d1b7; /* Example: Change color on focus */
+}
+
+nav a:active {
+    color: #f9d1b7; /* Example: Change color when active/clicked */
 }
 
 .wrapper {
