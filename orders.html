@@ -107,6 +107,11 @@
         </tr>
       </table>
 
+       <div class="total-cost">
+        <h3>Total Cost:</h3>
+        <p id="totalCost">$0.00</p>
+      </div>
+
       <div class="customer-details">
         <br><br>
         <h3>Customer Information:</h3>
@@ -115,7 +120,22 @@
         <input type="email" id="email" name="email" placeholder="Email Address" required>
         <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
         <br><br>
-        <h3>Catering or Pickup Date and Time:</h3>
+
+        <h3>Address:</h3>
+        <input type="text" id="addressLine1" name="addressLine1" placeholder="Street Address" required>
+        <input type="text" id="city" name="city" placeholder="City" required>
+        <input type="text" id="state" name="state" placeholder="State" required>
+        <input type="text" id="zip" name="zip" placeholder="Zip Code" required>
+
+        <!-- Payment Information -->
+        <h3>Payment Information:</h3>
+        <input type="text" id="cardName" name="cardName" placeholder="Name on Card" required>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="Card Number" required>
+        <input type="text" id="cardExp" name="cardExp" placeholder="Expiration MM/YY" required>
+        <input type="text" id="cardCVC" name="cardCVC" placeholder="CVC" required>
+
+        
+        <h3>Pickup Date and Time:</h3>
         <input type="datetime-local" id="pickupTime" name="pickupTime" required>
       </div>
       <button type="submit">Submit Order</button>
