@@ -46,11 +46,11 @@ nav a:hover {
 }
 
 nav a:focus {
-    color: #f9d1b7; /* Example: Change color on focus */
+    color: #dff9b7; /* Example: Change color on focus */
 }
 
 nav a:active {
-    color: #f9d1b7; /* Example: Change color when active/clicked */
+    color: #b7dff9; /* Example: Change color when active/clicked */
 }
 
 .wrapper {
